@@ -10,6 +10,7 @@ class PlantsDetailsScreen extends StatefulWidget {
       required this.image,
       required this.price,
       required this.title});
+
   final String image;
   final String price;
   final String title;
@@ -20,9 +21,12 @@ class PlantsDetailsScreen extends StatefulWidget {
 
 class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
   var currentIndex = 0;
+  int count = 2;
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.sizeOf(context).height;
     return Scaffold(
       backgroundColor: primaryColor,
       body: Stack(
@@ -100,8 +104,9 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                                 angle: 180 / 14,
                                 child: Image.asset(
                                   widget.image,
-                                  width: 300,
+                                  width: 340,
                                   height: 400,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                               Positioned(
@@ -116,7 +121,7 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                                   child: const Center(
                                     child: Icon(
                                       Icons.arrow_forward_ios,
-                                      color: Colors.white,
+                                      color: Colors.grey,
                                       size: 35,
                                     ),
                                   ),
@@ -127,14 +132,14 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                           const Spacer(),
                           Padding(
                             padding:
-                                const EdgeInsets.only(bottom: 20, right: 20),
+                                const EdgeInsets.only(bottom: 20, right: 29),
                             child: Column(
                               children: [
                                 Text(
-                                  "${widget.title}",
+                                  widget.title,
                                   style: const TextStyle(
                                       color: Colors.black,
-                                      fontSize: 30,
+                                      fontSize: 37,
                                       fontWeight: FontWeight.bold),
                                 ),
                                 const Text(
@@ -144,11 +149,14 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                                       fontSize: 15,
                                       fontWeight: FontWeight.w400),
                                 ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
                                 Text(
                                   widget.price,
                                   style: const TextStyle(
                                       color: Colors.black,
-                                      fontSize: 30,
+                                      fontSize: 37,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ],
@@ -163,7 +171,7 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
               Row(
                 children: [
                   Transform.translate(
-                    offset: const Offset(-42, 0),
+                    offset: const Offset(-62, 0),
                     child: CustomPaint(
                       size: const Size(130, 90),
                       painter: RPSCustomPainter(),
@@ -173,10 +181,10 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: EdgeInsets.only(right: 29),
+                            padding: EdgeInsets.only(right: 2, top: 5),
                             child: Icon(
                               Icons.person,
-                              size: 25,
+                              size: 30,
                               color: Colors.black,
                             ),
                           ),
@@ -187,7 +195,7 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                   const Spacer(),
                   Transform.flip(
                     flipX: true,
-                    origin: const Offset(20, 0),
+                    origin: const Offset(30, 0),
                     child: CustomPaint(
                       size: const Size(130, 90),
                       painter: RPSCustomPainter(),
@@ -197,10 +205,10 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                         child: Align(
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: EdgeInsets.only(right: 29),
+                            padding: EdgeInsets.only(right: 2, top: 5),
                             child: Icon(
                               Icons.home,
-                              size: 25,
+                              size: 30,
                               color: Colors.black,
                             ),
                           ),
@@ -210,16 +218,32 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                   ),
                 ],
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Icon(
-                    Icons.add,
-                    size: 40,
+                  InkWell(
+                    child: const Icon(
+                      Icons.add,
+                      size: 40,
+                    ),
+                    onTap: () {
+                      setState(() {
+                        count++;
+                      });
+                    },
                   ),
-                  Icon(
-                    Icons.remove,
-                    size: 40,
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        if (count >= 1) {
+                          count--;
+                        }
+                      });
+                    },
+                    child: const Icon(
+                      Icons.remove,
+                      size: 40,
+                    ),
                   ),
                 ],
               ),
@@ -227,7 +251,7 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
                 offset: const Offset(0, 10),
                 child: CustomPaint(
                   size: const Size(200, 50),
-                  painter: RPSCustomPainterBottom(),
+                  painter: RPSCustomPainterBottom(isWhite: false),
                   child: const SizedBox(
                     width: 180,
                     height: 56,
@@ -248,21 +272,21 @@ class _PlantsDetailsScreenState extends State<PlantsDetailsScreen> {
             ],
           ),
           Positioned(
-            bottom: 60,
+            bottom: 61,
             right: 70,
             child: CustomPaint(
               size: const Size(250, 100),
               painter: RPSCustomPainterBottomContainer(),
-              child: const SizedBox(
+              child: SizedBox(
                 width: 250,
                 height: 180,
                 child: Align(
                   alignment: Alignment.center,
                   child: Padding(
-                    padding: EdgeInsets.only(right: 29),
+                    padding: const EdgeInsets.only(right: 29),
                     child: Text(
-                      "x2",
-                      style: TextStyle(
+                      "x$count",
+                      style: const TextStyle(
                           color: Colors.black,
                           fontSize: 30,
                           fontWeight: FontWeight.bold),

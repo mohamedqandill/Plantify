@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:plantify/constants/constants.dart';
 
 class RPSCustomPainterBottom extends CustomPainter {
+  final bool isWhite;
+  RPSCustomPainterBottom({this.isWhite = true});
   @override
   void paint(Canvas canvas, Size size) {
     // Layer 1
 
     Paint paint_fill_0 = Paint()
-      ..color = Colors.white
+      ..color = isWhite ? Colors.white : secondaryColor
       ..style = PaintingStyle.fill
       ..strokeWidth = size.width * 0.00
       ..strokeCap = StrokeCap.butt

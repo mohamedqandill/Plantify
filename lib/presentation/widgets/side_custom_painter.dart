@@ -3,46 +3,48 @@ import 'package:flutter/material.dart';
 class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    // canvas.translate(-size.width * 0.2089417, 0);
+    // Layer 1
 
-    Paint paint_fill_1 = Paint()
+    Paint paint_fill_0 = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill
-      ..strokeWidth = 0;
+      ..strokeWidth = size.width * 0.00
+      ..strokeCap = StrokeCap.butt
+      ..strokeJoin = StrokeJoin.miter;
 
-    Path path_1 = Path();
-    path_1.moveTo(size.width * 0.2089417, size.height * 0.0915333);
-    path_1.cubicTo(
-        size.width * 0.2497250,
-        size.height * 0.3168667,
-        size.width * 0.5224750,
-        size.height * 0.2037000,
-        size.width * 0.5364833,
-        size.height * 0.5179500);
-    path_1.cubicTo(
-        size.width * 0.5250750,
-        size.height * 0.8211667,
-        size.width * 0.2380583,
-        size.height * 0.6888167,
-        size.width * 0.2080917,
-        size.height * 0.9145833);
-    path_1.cubicTo(
-        size.width * 0.2085687,
-        size.height * 0.7109375,
-        size.width * 0.2083042,
-        size.height * 0.7088208,
-        size.width * 0.2089417,
-        size.height * 0.0915333);
-    path_1.close();
+    Path path_0 = Path();
+    path_0.moveTo(size.width * 0.3163333, size.height * 0.1700000);
+    path_0.quadraticBezierTo(size.width * 0.3143333, size.height * 0.7528333,
+        size.width * 0.3150000, size.height * 0.9213333);
+    path_0.cubicTo(
+        size.width * 0.3922083,
+        size.height * 0.6815000,
+        size.width * 0.6066250,
+        size.height * 0.9231667,
+        size.width * 0.6658333,
+        size.height * 0.5566667);
+    path_0.cubicTo(
+        size.width * 0.6041250,
+        size.height * 0.1055833,
+        size.width * 0.3918750,
+        size.height * 0.3967500,
+        size.width * 0.3183333,
+        size.height * 0.1043333);
+    path_0.quadraticBezierTo(size.width * 0.3183333, size.height * 0.1047500,
+        size.width * 0.3196667, size.height * 0.1833333);
 
-    canvas.drawPath(path_1, paint_fill_1);
+    canvas.drawPath(path_0, paint_fill_0);
 
-    Paint paint_stroke_1 = Paint()
+    // Layer 1
+
+    Paint paint_stroke_0 = Paint()
       ..color = const Color.fromARGB(255, 33, 150, 243)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 0;
+      ..strokeWidth = size.width * 0.00
+      ..strokeCap = StrokeCap.butt
+      ..strokeJoin = StrokeJoin.miter;
 
-    canvas.drawPath(path_1, paint_stroke_1);
+    canvas.drawPath(path_0, paint_stroke_0);
   }
 
   @override

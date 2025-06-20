@@ -24,7 +24,7 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
     return Column(
       children: [
         const SizedBox(
-          height: 20,
+          height: 10,
         ),
         Expanded(
           child: ListView.separated(
@@ -128,7 +128,7 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
                           Transform.translate(
                             offset: const Offset(17, 0),
                             child: CustomPaint(
-                              size: const Size(90, 102),
+                              size: const Size(90, 72),
                               painter: LockCardPainter(),
                               child: const SizedBox(
                                 width: 100,
@@ -160,20 +160,20 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
         Row(
           children: [
             Transform.translate(
-              offset: const Offset(-42, 0),
+              offset: const Offset(-62, 0),
               child: CustomPaint(
                 size: const Size(200, 90),
                 painter: RPSCustomPainter(),
                 child: const SizedBox(
-                  width: 180,
-                  height: 90,
+                  width: 190,
+                  height: 100,
                   child: Align(
                     alignment: Alignment.center,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 29),
+                      padding: EdgeInsets.only(right: 2, top: 5),
                       child: Icon(
                         Icons.arrow_back_ios_new,
-                        size: 25,
+                        size: 30,
                         color: Colors.black54,
                       ),
                     ),
@@ -184,20 +184,20 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
             const Spacer(),
             Transform.flip(
               flipX: true,
-              origin: const Offset(20, 0),
+              origin: const Offset(30, 0),
               child: CustomPaint(
                 size: const Size(200, 90),
                 painter: RPSCustomPainter(),
                 child: const SizedBox(
-                  width: 180,
-                  height: 90,
+                  width: 190,
+                  height: 100,
                   child: Align(
                     alignment: Alignment.center,
                     child: Padding(
-                      padding: EdgeInsets.only(right: 29),
+                      padding: EdgeInsets.only(right: 2, top: 5),
                       child: Icon(
                         Icons.arrow_back_ios_new,
-                        size: 25,
+                        size: 30,
                         color: Colors.black,
                       ),
                     ),
