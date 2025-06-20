@@ -15,3 +15,4 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 ![Leaf Icon](https://github.com/mohamedqandill/Plantify/blob/master/assets/images/Screenshot_18-6-2025_182055_www.behance.net.jpeg?raw=true)
+![Leaf Icon](https://github.com/mohamedqandill/Plantify/blob/master/assets/images/Screenshot_19-6-2025_154651_www.behance.net.jpeg?raw=true)
