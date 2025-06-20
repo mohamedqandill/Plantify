@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plantify/constants/constants.dart';
-import 'package:plantify/presentation/screens/plants_screen.dart';
+import 'package:plantify/plants/presentation/screens/plants_screen.dart';
+
+import 'fruits/screens/fruit_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -57,29 +59,38 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            width: 250,
-            height: 250,
-            decoration: BoxDecoration(
-                border: Border.all(width: 8, color: fruitSecondaryColor),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Image.asset(
-                  "assets/images/pitaya.png",
-                  height: 150,
-                ),
-                const Text(
-                  "Fruits",
-                  style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                )
-              ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return FruitScreen();
+                },
+              ));
+            },
+            child: Container(
+              width: 250,
+              height: 250,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 8, color: fruitSecondaryColor),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset(
+                    "assets/images/pitaya.png",
+                    height: 150,
+                  ),
+                  const Text(
+                    "Fruits",
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  )
+                ],
+              ),
             ),
           ),
         ],

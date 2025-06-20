@@ -38,6 +38,8 @@ dependencies:
   flutter_rating_bar:
   hero_animation:
   device_preview:
+  custom_navigation_bar:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:

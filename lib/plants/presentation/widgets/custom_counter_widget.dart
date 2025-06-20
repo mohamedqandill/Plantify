@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../../../constants/constants.dart';
 
 class CustomCounter extends StatelessWidget {
   const CustomCounter({super.key, required this.icon, required this.onTap});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/constants.dart';
+import '../../../constants/constants.dart';
 import '../widgets/plants_view_body.dart';
 
 class PlantsScreen extends StatelessWidget {

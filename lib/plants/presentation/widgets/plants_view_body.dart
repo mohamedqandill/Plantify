@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:plantify/constants/constants.dart';
-import 'package:plantify/presentation/widgets/bottom_custom_painter.dart';
-import 'package:plantify/presentation/widgets/plants_details_view_body.dart';
-import 'package:plantify/presentation/widgets/side_custom_painter.dart';
+import 'package:plantify/plants/presentation/widgets/plants_details_view_body.dart';
+import 'package:plantify/plants/presentation/widgets/side_custom_painter.dart';
 
+import 'bottom_custom_painter.dart';
 import 'custom_counter_widget.dart';
 import 'lock_card_painter.dart';
 

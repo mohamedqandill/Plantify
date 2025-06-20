@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantify/constants/constants.dart';
-import 'package:plantify/presentation/widgets/side_custom_painter.dart';
+import 'package:plantify/plants/presentation/widgets/side_custom_painter.dart';
 
 import 'bottom_custom_painter.dart';
 
