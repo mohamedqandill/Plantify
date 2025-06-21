@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../constants/constants.dart';
+import 'custom_fruit_container.dart';
 
 class FruitsScreenBody extends StatelessWidget {
   const FruitsScreenBody({super.key});
@@ -55,8 +56,9 @@ class FruitsScreenBody extends StatelessWidget {
                   ),
                   const Positioned(
                     bottom: -90,
-                    right: 25,
+                    left: 40,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Exotic",
@@ -131,7 +133,7 @@ class FruitsScreenBody extends StatelessWidget {
         const Align(
           alignment: Alignment.centerRight,
           child: Padding(
-            padding: EdgeInsets.only(top: 25, right: 50),
+            padding: EdgeInsets.only(top: 25, right: 30),
             child: Text(
               "See more",
               style: TextStyle(
@@ -141,175 +143,25 @@ class FruitsScreenBody extends StatelessWidget {
             ),
           ),
         ),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, top: 80),
-                  child: Container(
-                    width: 160,
-                    height: 180,
-                    decoration: const BoxDecoration(
-                        color: fruitSecondaryColor,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(25),
-                          topLeft: Radius.circular(25),
-                          bottomLeft: Radius.circular(25),
-                          bottomRight: Radius.circular(70),
-                        )),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Pitaya",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "Premium",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: fruitgreenColor),
-                              ),
-                              FaIcon(
-                                FontAwesomeIcons.crown,
-                                color: fruitgreenColor,
-                                size: 15,
-                              )
-                            ],
-                          ),
-                          Text(
-                            "€4.95",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  right: 10,
-                  child: Image.asset(
-                    "assets/images/pitaya.png",
-                    width: 140,
-                    height: 140,
-                  ),
-                ),
-                Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: Colors.white, shape: BoxShape.circle),
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        size: 25,
-                      ),
-                    ))
-              ],
+            CustomFruitContainer(
+              title: "Pitaya",
+              image: "assets/images/pitaya.png",
+              price: "€4.95",
             ),
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, top: 80),
-                  child: Container(
-                    width: 160,
-                    height: 180,
-                    decoration: const BoxDecoration(
-                        color: fruitSecondaryColor,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(25),
-                          topLeft: Radius.circular(25),
-                          bottomLeft: Radius.circular(25),
-                          bottomRight: Radius.circular(70),
-                        )),
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Papaya",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "Premium",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: fruitgreenColor),
-                              ),
-                              FaIcon(
-                                FontAwesomeIcons.crown,
-                                color: fruitgreenColor,
-                                size: 15,
-                              )
-                            ],
-                          ),
-                          Text(
-                            "€4.95",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  right: 10,
-                  child: Image.asset(
-                    "assets/images/papaya.png",
-                    width: 140,
-                    height: 140,
-                  ),
-                ),
-                Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: Colors.white, shape: BoxShape.circle),
-                      child: const Icon(
-                        Icons.arrow_forward,
-                        size: 25,
-                      ),
-                    ))
-              ],
+            CustomFruitContainer(
+              title: "Papaya",
+              image: "assets/images/papaya.png",
+              price: "€3.95",
             ),
           ],
         ),
         const Padding(
-          padding: EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(left: 30, right: 30, top: 30),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "Offers",
@@ -333,7 +185,7 @@ class FruitsScreenBody extends StatelessWidget {
             clipBehavior: Clip.none,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10, top: 20),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   width: 350,
                   height: 100,
@@ -346,7 +198,7 @@ class FruitsScreenBody extends StatelessWidget {
                         bottomRight: Radius.circular(70),
                       )),
                   child: Padding(
-                      padding: EdgeInsets.only(left: 20),
+                      padding: const EdgeInsets.only(left: 20),
                       child: Row(
                         children: [
                           Image.asset(
@@ -415,7 +267,7 @@ class FruitsScreenBody extends StatelessWidget {
                   child: Container(
                     width: 40,
                     height: 40,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white, shape: BoxShape.circle),
                     child: const Icon(
                       Icons.arrow_forward,
