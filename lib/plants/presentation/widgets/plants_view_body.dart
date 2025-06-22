@@ -37,6 +37,7 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
                           return PlantsDetailsScreen(
                             title: titles[index],
                             price: prices[index],
+                            counter: counts[index],
                             image: images[index],
                           );
                         },
@@ -84,7 +85,7 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
                                     fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                prices[index],
+                                "€${prices[index]}",
                                 style: const TextStyle(
                                     color: primaryColor,
                                     fontSize: 20,
@@ -208,7 +209,7 @@ class _PlantsViewBodyState extends State<PlantsViewBody> {
           ],
         ),
         Transform.translate(
-          offset: const Offset(0, 20),
+          offset: const Offset(0, 10),
           child: CustomPaint(
             size: const Size(200, 50),
             painter: RPSCustomPainterBottom(),
@@ -246,10 +247,10 @@ List<String> titles = [
   "Sanseviria",
   "Strelitzia",
 ];
-List<String> prices = [
-  "€78",
-  "€35",
-  "€15",
-  "€100",
+List<int> prices = [
+  78,
+  35,
+  15,
+  100,
 ];
 List<int> counts = [3, 2, 1, 2];

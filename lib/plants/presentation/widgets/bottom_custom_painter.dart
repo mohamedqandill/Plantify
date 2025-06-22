@@ -1,57 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:plantify/constants/constants.dart';
 
 class RPSCustomPainterBottom extends CustomPainter {
   final bool isWhite;
   RPSCustomPainterBottom({this.isWhite = true});
   @override
   void paint(Canvas canvas, Size size) {
-    // Layer 1
+    // Triangle
 
-    Paint paint_fill_0 = Paint()
-      ..color = isWhite ? Colors.white : secondaryColor
+    Paint paint_fill_1 = Paint()
+      ..color =
+          isWhite ? Colors.white : const Color.fromARGB(255, 142, 214, 138)
       ..style = PaintingStyle.fill
       ..strokeWidth = size.width * 0.00
       ..strokeCap = StrokeCap.butt
       ..strokeJoin = StrokeJoin.miter;
 
-    Path path_0 = Path();
-    path_0.moveTo(size.width * 0.1683333, size.height * 0.8400000);
-    path_0.cubicTo(
-        size.width * 0.2801583,
-        size.height * 0.7275500,
-        size.width * 0.3760833,
-        size.height * 0.3251167,
-        size.width * 0.4991083,
-        size.height * 0.2978667);
-    path_0.cubicTo(
-        size.width * 0.6355000,
-        size.height * 0.3185667,
-        size.width * 0.7340417,
-        size.height * 0.7320333,
-        size.width * 0.8358333,
-        size.height * 0.8416667);
-    path_0.cubicTo(
-        size.width * 0.6689583,
-        size.height * 0.8412500,
-        size.width * 0.6689583,
-        size.height * 0.8412500,
-        size.width * 0.1683333,
-        size.height * 0.8400000);
-    path_0.close();
+    Path path_1 = Path();
+    path_1.moveTo(size.width * 0.4873167, size.height * 0.1737500);
+    path_1.cubicTo(
+        size.width * 0.2964583,
+        size.height * 0.3010667,
+        size.width * 0.3861500,
+        size.height * 0.7226000,
+        size.width * 0.2060750,
+        size.height * 0.8283833);
+    path_1.cubicTo(
+        size.width * 0.3168833,
+        size.height * 0.8621667,
+        size.width * 0.6878833,
+        size.height * 0.8514833,
+        size.width * 0.8209333,
+        size.height * 0.8301500);
+    path_1.cubicTo(
+        size.width * 0.5877167,
+        size.height * 0.7175833,
+        size.width * 0.7319667,
+        size.height * 0.3295833,
+        size.width * 0.4873167,
+        size.height * 0.1737500);
+    path_1.close();
 
-    canvas.drawPath(path_0, paint_fill_0);
+    canvas.drawPath(path_1, paint_fill_1);
 
-    // Layer 1
+    // Triangle
 
-    Paint paint_stroke_0 = Paint()
+    Paint paint_stroke_1 = Paint()
       ..color = const Color.fromARGB(255, 33, 150, 243)
       ..style = PaintingStyle.stroke
       ..strokeWidth = size.width * 0.00
       ..strokeCap = StrokeCap.butt
       ..strokeJoin = StrokeJoin.miter;
 
-    canvas.drawPath(path_0, paint_stroke_0);
+    canvas.drawPath(path_1, paint_stroke_1);
   }
 
   @override

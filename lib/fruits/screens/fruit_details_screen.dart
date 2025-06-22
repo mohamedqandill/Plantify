@@ -16,6 +16,7 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.sizeOf(context).width;
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -210,26 +211,26 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
           Row(
             children: [
               Transform.translate(
-                offset: const Offset(-40, 20),
+                offset: const Offset(-40, 40),
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: [
                     Container(
-                      width: 250,
-                      height: 250,
+                      width: 245,
+                      height: 245,
                       alignment: Alignment.centerLeft,
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           shape: BoxShape.circle,
                           border: Border.all(width: 2, color: Colors.white)),
                       child: Transform.translate(
-                        offset: const Offset(20, 40),
+                        offset: const Offset(10, 30),
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
                             Container(
-                              width: 150,
-                              height: 150,
+                              width: 180,
+                              height: 180,
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   shape: BoxShape.circle,
@@ -259,12 +260,12 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                             ),
                             Positioned(
                               top: selectedPack == 1
-                                  ? -80
+                                  ? -61
                                   : selectedPack == 5
-                                      ? -40
+                                      ? -35
                                       : 30,
                               right: selectedPack == 1
-                                  ? -55
+                                  ? -20
                                   : selectedPack == 5
                                       ? -100
                                       : -120,
@@ -273,7 +274,7 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                                     ? 0
                                     : selectedPack == 5
                                         ? 92
-                                        : 96,
+                                        : 99,
                                 child: CustomPaint(
                                   size: const Size(200, 100),
                                   painter: PacksCustomPainter(),
@@ -285,7 +286,7 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                       ),
                     ),
                     Positioned(
-                      right: 100,
+                      right: 110,
                       top: -20,
                       child: GestureDetector(
                         onTap: () {
@@ -326,8 +327,8 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                       ),
                     ),
                     Positioned(
-                      right: 0,
-                      top: 40,
+                      right: 5,
+                      top: 35,
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -367,8 +368,8 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                       ),
                     ),
                     Positioned(
-                      right: -10,
-                      top: 150,
+                      right: -20,
+                      top: 120,
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -437,15 +438,13 @@ class _FruitDetailsScreenState extends State<FruitDetailsScreen> {
                       const SizedBox(
                         height: 15,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text("Add to \nOrder",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.none,
-                                fontSize: 17,
-                                color: Colors.black)),
-                      ),
+                      const Text("Add to \nOrder",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.none,
+                              fontSize: 17,
+                              color: Colors.black)),
                     ],
                   ),
                 ),
